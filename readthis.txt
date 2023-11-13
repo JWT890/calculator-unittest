@@ -1,0 +1,4 @@
+Started unit testing the Calculator Vue app today to experiment with with Codieum
+Unit tests so far on a couple stuff in Vue and Python have been successful
+but you need to specify what you want to do in order to get it to work.
+Will continue to see if I can make this one successful. 
