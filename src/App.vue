@@ -1,18 +1,18 @@
 <template>
   <header>
     <div id="app">
-      <Calculator />
+      <SimpleCalculator />
     </div>
   </header>
 </template>
 
 <script>
-import Calculator from './components/Calculator.vue'
+import SimpleCalculator from './components/SimpleCalculator.vue'
 
 export default {
   name: 'app',
   components: {
-    Calculator
+    SimpleCalculator,
   }
 }
 </script>
