@@ -43,4 +43,26 @@ describe('SimpleCalculator', () => {
     wrapper.vm.times();
     expect(wrapper.vm.current).toBe(6);
   });
+  it('should divide two numbers correctly', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: 10, previous: 2, operator: (a, b) => a / b});
+    wrapper.vm.divide = function() {
+      this.current = this.operator(this.current, this.previous);
+    };
+    wrapper.vm.divide();
+    expect(wrapper.vm.current).toBe(5);
+  });
+  it('should append the number to the current value', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    const number = '5';
+    wrapper.setData({ current: '10'});
+    wrapper.vm.append(number);
+    expect(wrapper.vm.current).toBe('105');
+  });
+  it('should calculate the percentage correctly', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: '50'});
+    wrapper.vm.percent();
+    expect(wrapper.vm.current).toBe('0.5');
+  })
 });
