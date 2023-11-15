@@ -1,0 +1,8 @@
+To get good unit test results with the Codeium extension, you have to say something along
+the lines of "Write me a unit test in "desired unit test language" from@nameofFile for
+name of the function you want to be unit tested. It will give you an output of code to use
+to unit test and will want to unit test to see if there aren't any errors with the code
+since there are errors that pop up and will need to either look up the errors to resolve them,
+type the error in the respective chat with Codeium, or put it into Bard/ChatGPT to resolve the
+error with the unit test code. Otherwise thats about it for unit testing, you can also ask it
+to code programs as well if you want to. 
