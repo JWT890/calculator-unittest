@@ -16,4 +16,12 @@ describe('SimpleCalculator', () => {
 
     expect(wrapper.vm.current).toBe('8');
   });
+  it('plus function correctly add two numbers', () => {
+    const wrapper = mount(SimpleCalculator);
+    wrapper.setData({ current: '5', previous: '3', operator: (a, b) => a + b});
+
+    wrapper.vm.plus();
+
+    expect(wrapper.vm.current).toBe('5');
+  });
 });
