@@ -64,5 +64,47 @@ describe('SimpleCalculator', () => {
     wrapper.setData({ current: '50'});
     wrapper.vm.percent();
     expect(wrapper.vm.current).toBe('0.5');
-  })
+  });
+  it('should append a dot to the current value if it does not already contain a dot', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: '10'});
+    wrapper.vm.dot();
+
+    expect(wrapper.vm.current).toBe('10.');
+  });
+  it('should not append a dot the current value if it already contains a dot', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: '10.5'});
+    wrapper.vm.dot();
+
+    expect(wrapper.vm.current).toBe('10.5');
+  });
+  it('should toggle the sign of the current number', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: '5'});
+
+    // Positive number
+    expect(wrapper.vm.current).toBe('5');
+
+    // Trigger sign method
+    wrapper.vm.sign();
+
+    // Current number should be negative
+    expect(wrapper.vm.current).toBe('-5');
+    
+    // Trigger sign method again
+    wrapper.vm.sign();
+
+    // Current number should be positive once again
+    expect(wrapper.vm.current).toBe('5');
+  });
+  it('should update the "previous" data property correctly', () => {
+    const wrapper = shallowMount(SimpleCalculator);
+    wrapper.setData({ current: '5', operatorClicked: false});
+
+    wrapper.vm.setPrevious();
+
+    expect(wrapper.vm.previous).toBe('5');
+    expect(wrapper.vm.operatorClicked).toBe(true);
+  });
 });
