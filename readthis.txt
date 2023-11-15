@@ -2,3 +2,9 @@ Started unit testing the Calculator Vue app today to experiment with with Codieu
 Unit tests so far on a couple stuff in Vue and Python have been successful
 but you need to specify what you want to do in order to get it to work.
 Will continue to see if I can make this one successful. 
+
+11/15/2023
+Went and unit tested a Calculator with Codeium to see if Codeium worked
+and worked pretty well a good majority of the time once a few errors
+were resolved for a few functions. Probably might use Codeium for unit 
+testing probably primarly with JavaScript and probably with Python.
